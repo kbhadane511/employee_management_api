@@ -16,7 +16,7 @@ class EmployeeDetailsScreen extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 50,
-              backgroundImage: NetworkImage(employee.avatar),
+              backgroundColor: Colors.black
             ),
             const SizedBox(height: 16),
             Text(

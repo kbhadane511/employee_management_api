@@ -1,4 +1,5 @@
 import 'package:employee_management/features/screens/employee_details.dart';
+import 'package:employee_management/features/screens/employee_details_form.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/employee_controller.dart';
@@ -11,7 +12,14 @@ class HomeScreen extends StatelessWidget {
     final EmployeeController controller = Get.find();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Employee Management')),
+      appBar: AppBar(
+        title: const Text('Employee Management'),
+        actions: [
+          IconButton(onPressed: (){
+            Get.off( EmployeeDetailsForm());
+          }, icon: const Icon(Icons.add_circle)),
+        ],
+        ),
       body: Obx(() {
         if (controller.isLoading.value) {
           return const Center(child: CircularProgressIndicator());
